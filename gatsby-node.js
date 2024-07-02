@@ -29,6 +29,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `).then((result) => {
+    console.log('result', result);
     const entities = result.data.drupal.nodeQuery.entities;
 
     const mainNavigationLinks = result.data.drupal.mainNavigation.links.map(

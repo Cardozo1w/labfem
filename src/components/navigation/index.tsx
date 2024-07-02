@@ -1,9 +1,13 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { Link } from "gatsby";
 import logo from "../../assets/img/logo.png";
 import { NavigationProps } from "../../types/types";
+import HamburguerButton from "../hamburguerButton";
+import "./styles.css";
 
 const Navigation: FC<NavigationProps> = ({ sliceContext }) => {
+  const [active, setActive] = useState(true);
+
   const navigation = sliceContext.navigation;
   return (
     <header className="bg-white py-4 px-6 md:px-8 lg:px-12">
@@ -23,7 +27,7 @@ const Navigation: FC<NavigationProps> = ({ sliceContext }) => {
             Labfem
           </Link>
         </h1>
-        <nav>
+        <nav className="hidden lg:block">
           <ul className="flex space-x-4">
             {navigation.map((item) => (
               <li>
@@ -37,6 +41,30 @@ const Navigation: FC<NavigationProps> = ({ sliceContext }) => {
             ))}
           </ul>
         </nav>
+        <button onClick={() => setActive(!active)}>
+          <HamburguerButton active={active} className="block lg:hidden" />
+        </button>
+        <div className={`slide-in-div ${active ? "visible" : ""}`}>
+          <div className="slide-in-content py-16 px-8">
+            <nav>
+              <ul className="space-y-4">
+                {navigation.map((item) => (
+                  <li>
+                    <button
+                      className="text-[#af277d] hover:text-[#fab800]"
+                      onClick={()=>{
+                        window.location.hash = item.to
+                        setActive(false)
+                      }}
+                    >
+                      {item.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        </div>{" "}
       </div>
     </header>
   );

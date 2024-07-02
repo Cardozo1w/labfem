@@ -8,7 +8,7 @@ const Footer: FC<NavigationProps> = ({ sliceContext }) => {
   return (
     <footer className="bg-[#af277d] text-white py-4 px-6 md:px-8 lg:px-12">
       <div className="container mx-auto flex justify-between items-center">
-        <div>
+        <div className="space-y-2">
           <p>
             &copy; {new Date().getFullYear()} Labfem. Todos los derechos
             reservados.
@@ -20,7 +20,7 @@ const Footer: FC<NavigationProps> = ({ sliceContext }) => {
             </a>
           </p>
         </div>
-        <nav>
+        <nav className="hidden lg:block">
           <ul className="flex space-x-4">
             {navigation.map((item) => (
               <li>

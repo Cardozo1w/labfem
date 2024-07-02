@@ -1,0 +1,29 @@
+.menu-activador {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  .menu-activador-linea {
+    height: 2px;
+    background-color: #000;
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+    transition: all 0.3s;
+  }
+  
+  .menu-activador.active .menu-activador-linea:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  
+  .menu-activador.active .menu-activador-linea:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-activador.active .menu-activador-linea:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+  
