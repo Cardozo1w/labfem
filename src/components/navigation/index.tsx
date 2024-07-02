@@ -6,7 +6,7 @@ import HamburguerButton from "../hamburguerButton";
 import "./styles.css";
 
 const Navigation: FC<NavigationProps> = ({ sliceContext }) => {
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
 
   const navigation = sliceContext.navigation;
   return (
@@ -41,10 +41,10 @@ const Navigation: FC<NavigationProps> = ({ sliceContext }) => {
             ))}
           </ul>
         </nav>
-        <button onClick={() => setActive(!active)}>
-          <HamburguerButton active={active} className="block lg:hidden" />
+        <button className="block lg:hidden" onClick={() => setActive(!active)}>
+          <HamburguerButton active={active} />
         </button>
-        <div className={`slide-in-div ${active ? "visible" : ""}`}>
+        <div className={`slide-in-div block lg:hidden ${active ? "visible" : ""}`}>
           <div className="slide-in-content py-16 px-8">
             <nav>
               <ul className="space-y-4">
