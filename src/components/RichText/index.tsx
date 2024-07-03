@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.css";
 
 const RichText = ({
@@ -8,6 +8,8 @@ const RichText = ({
   children: string;
   className?: string;
 }) => {
+  const [content, setContent] = useState("");
+
   function updateHtmlContent(htmlContent: string) {
     if (!htmlContent || typeof htmlContent !== "string") {
       return htmlContent;
@@ -46,13 +48,12 @@ const RichText = ({
     return container.innerHTML;
   }
 
-  const updatedHtmlContent = updateHtmlContent(children);
-
+  useEffect(() => {
+    setContent(updateHtmlContent(children));
+  }, []);
+  
   return (
-    <div
-      className={className}
-      dangerouslySetInnerHTML={{ __html: updatedHtmlContent }}
-    />
+    <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
   );
 };
 
