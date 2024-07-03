@@ -28,4 +28,8 @@
     font-size: 14px;
     color: #555;
   }
+
+  .article p{
+    margin: 1em 0;
+  }
   
