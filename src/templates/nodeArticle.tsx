@@ -25,7 +25,7 @@ const NodePage: FC<any> = ({ data: drupal }) => {
         description={`<p>“Cada paso hacia la igualdad es un paso hacia un mundo mejor.”</p>`}
       />
       <div className="w-full lg:max-w-[1000px] mx-auto article mt-8 lg:mt-16 px-6">
-        <h2 className="text-3xl font-bold text-[#af277d] mb-8">
+        <h2 className="text-3xl font-bold text-[#af277d] mb-8 text-center">
           {data.title}
         </h2>
         <RichText>{data.fieldBody?.processed}</RichText>
