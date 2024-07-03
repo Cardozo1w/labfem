@@ -9,7 +9,7 @@ const RichText = ({
   className?: string;
 }) => {
   function updateHtmlContent(htmlContent: string) {
-    if (!htmlContent || typeof htmlContent !== "string") {
+    if (!htmlContent || typeof document === "undefined") {
       return htmlContent;
     }
 
