@@ -84,5 +84,11 @@ export const ParagraphCard = graphql`
     fieldDescripcion {
       processed
     }
+    fieldCta {
+      url {
+        path
+      }
+      title
+    }
   }
 `;

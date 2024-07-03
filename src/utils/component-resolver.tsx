@@ -37,6 +37,10 @@ const ParagraphCardGrid: FC<any> = ({ entity }) => {
         src: card.entity.fieldImagen?.url,
         alt: card.entity.fieldImagen?.alt,
       },
+      cta: {
+        to: card.entity.fieldCta.url.path,
+        label: card.entity.fieldCta.title
+      }
     };
   });
   return (

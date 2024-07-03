@@ -29,6 +29,10 @@ export interface CardProps {
   };
   title: string;
   description: string;
+  cta?: {
+    to: string;
+    label: string;
+  };
 }
 
 export interface CardGridProps {
