@@ -17,9 +17,9 @@ const Hero: FC<HeroProps> = ({ title, description, image }) => {
           <h2 className="text-4xl font-bold text-white mb-4 text-center lg:text-start">
             {title}
           </h2>
-          <RichText className="text-white text-lg mb-8 text-center lg:text-start">
+          {/* <RichText className="text-white text-lg mb-8 text-center lg:text-start">
             {description as string}
-          </RichText>
+          </RichText> */}
         </div>
       </div>
     </section>

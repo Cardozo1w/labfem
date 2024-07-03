@@ -10,6 +10,15 @@ export const NodePage = graphql`
   }
 `;
 
+export const NodeArticle = graphql`
+  fragment NodeArticle on Drupal_NodeArticle {
+    title
+    fieldBody {
+      processed
+    }
+  }
+`;
+
 export const Drupal_FieldNodePageFieldComponents = graphql`
   fragment FieldNodePageFieldComponentes on Drupal_FieldNodePageFieldComponentes {
     entity {
