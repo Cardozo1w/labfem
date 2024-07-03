@@ -8,6 +8,9 @@ import imageHero from "../assets/img/image-hero.jpg";
 import { Hero } from "../components";
 import RichText from "../components/RichText";
 
+// styles
+import "../components/RichText/styles.css"
+
 const NodePage: FC<any> = ({ data: drupal }) => {
   const data = drupal.drupal.nodeById;
   return (
