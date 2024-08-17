@@ -44,7 +44,7 @@ const ParagraphCardGrid: FC<any> = ({ entity }) => {
     };
   });
   return (
-    <CardGrid id={entity.fieldIdentificador} key={entity.uuid} cards={cards} />
+    <CardGrid id={entity.fieldIdentificador} key={entity.uuid} title={entity.fieldTitle} cards={cards} />
   );
 };
 

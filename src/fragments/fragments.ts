@@ -64,6 +64,7 @@ export const ParagraphCardGrid = graphql`
   fragment ParagraphCardGrid on Drupal_ParagraphCardGrid {
     uuid
     fieldIdentificador
+    fieldTitle
     fieldCards {
       entity {
         ...ParagraphCard

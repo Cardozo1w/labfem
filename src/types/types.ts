@@ -37,6 +37,7 @@ export interface CardProps {
 
 export interface CardGridProps {
   id?: string;
+  title: string;
   cards: CardGridProps[];
 }
 
