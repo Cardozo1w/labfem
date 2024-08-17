@@ -31,5 +31,6 @@
 
   .article p{
     margin: 1em 0;
+    line-height: 180% !important;
   }
   

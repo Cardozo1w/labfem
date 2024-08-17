@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 
 const Card: FC<CardProps> = ({ title, image, description, cta }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all ease-linear overflow-hidden">
       <img
         src={image.src}
         alt={image.alt}

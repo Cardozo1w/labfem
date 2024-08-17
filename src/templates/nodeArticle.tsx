@@ -28,7 +28,7 @@ const NodePage: FC<any> = ({ data: drupal }) => {
         <h2 className="text-3xl font-bold text-[#af277d] mb-8 text-center">
           {data.title}
         </h2>
-        <RichText>{data.fieldBody?.processed}</RichText>
+          <RichText className="text-[#666666]">{data.fieldBody?.processed}</RichText>
       </div>
       <Contact />
       <Slice alias="footer" />
