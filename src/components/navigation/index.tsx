@@ -15,9 +15,9 @@ const Navigation: FC<NavigationProps> = ({ sliceContext }) => {
         <h1>
           <Link
             to="/"
-            className="text-3xl font-bold text-[#af277d] flex items-center"
+            className="text-xl lg:text-3xl font-bold text-[#af277d] flex items-center"
           >
-            <div className="max-h-12 max-w-12">
+            <div className="max-h-8 max-w-8 lg:max-h-12 lg:max-w-12">
               <img
                 alt="logo labfem"
                 className="mr-2 object-contain"
