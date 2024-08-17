@@ -10,7 +10,7 @@ const ImageBlock: FC<ImageBlockProps> = ({
   imageOrientation = "left",
 }) => {
   return (
-    <section id={id} className="bg-white py-16 px-6 md:px-8 lg:px-12">
+    <section id={id} className="bg-white py-4 lg:py-16 px-6 md:px-8 lg:px-12">
       <div
         className={`container mx-auto flex flex-col ${
           imageOrientation === "left" ? "md:flex-row" : "md:flex-row-reverse"

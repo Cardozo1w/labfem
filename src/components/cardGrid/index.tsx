@@ -4,7 +4,7 @@ import { CardGridProps } from "../../types/types";
 
 const CardGrid: FC<CardGridProps> = ({ id, cards }) => {
   return (
-    <section id={id} className="bg-white py-8 px-6 md:px-8 lg:px-12">
+    <section id={id} className="bg-white py-4 lg:py-8 px-6 md:px-8 lg:px-12">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-[#af277d] mb-8">
           Articulos Principales
