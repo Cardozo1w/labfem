@@ -5,7 +5,7 @@ import { HeroProps } from "../../types/types";
 const Hero: FC<HeroProps> = ({ title, description, image }) => {
   return (
     <section
-      className="relative bg-cover bg-center bg-no-repeat py-40 px-6 md:px-8 lg:px-12"
+      className="relative bg-cover bg-center bg-no-repeat py-40 px-6 md:px-8 lg:px-12 lg:mt-[80px]"
       style={{
         backgroundImage: `url("${image}")`,
       }}

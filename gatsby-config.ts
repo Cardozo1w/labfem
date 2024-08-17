@@ -29,7 +29,15 @@ const config: GatsbyConfig = {
         fieldName: "drupal",
         url: `${process.env.GATSBY_DRUPAL_URL}/graphql`,
         headers: {
-          Authorization: `Basic ${Buffer.from(`${process.env.GATSBY_DRUPAL_USERNAME}:${process.env.GATSBY_DRUPAL_PASSWORD}`).toString("base64")}`,
+          Authorization: `Basic ${Buffer.from(
+            `${process.env.GATSBY_DRUPAL_USERNAME}:${process.env.GATSBY_DRUPAL_PASSWORD}`
+          ).toString("base64")}`,
+        },
+        batch: true,
+        // See https://github.com/graphql/dataloader#new-dataloaderbatchloadfn--options
+        // for a full list of DataLoader options
+        dataLoaderOptions: {
+          maxBatchSize: 10,
         },
       },
     },

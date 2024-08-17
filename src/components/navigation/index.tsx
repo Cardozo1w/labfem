@@ -10,7 +10,7 @@ const Navigation: FC<NavigationProps> = ({ sliceContext }) => {
 
   const navigation = sliceContext.navigation;
   return (
-    <header className="bg-white py-4 px-6 md:px-8 lg:px-12">
+    <header className="bg-white py-4 px-6 md:px-8 lg:px-12 fixed top-0 z-10 w-full shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         <h1>
           <Link
@@ -32,7 +32,7 @@ const Navigation: FC<NavigationProps> = ({ sliceContext }) => {
             {navigation.map((item) => (
               <li>
                 <Link
-                  to={item.to}
+                  to={item.label === "Inicio" ? "/" : `/${item.to}`}
                   className="text-[#af277d] hover:text-[#fab800]"
                 >
                   {item.label}
@@ -44,7 +44,9 @@ const Navigation: FC<NavigationProps> = ({ sliceContext }) => {
         <button className="block lg:hidden" onClick={() => setActive(!active)}>
           <HamburguerButton active={active} />
         </button>
-        <div className={`slide-in-div block lg:hidden ${active ? "visible" : ""}`}>
+        <div
+          className={`slide-in-div block lg:hidden ${active ? "visible" : ""}`}
+        >
           <div className="slide-in-content py-16 px-8">
             <nav>
               <ul className="space-y-4">
@@ -52,9 +54,9 @@ const Navigation: FC<NavigationProps> = ({ sliceContext }) => {
                   <li>
                     <button
                       className="text-[#af277d] hover:text-[#fab800]"
-                      onClick={()=>{
-                        window.location.hash = item.to
-                        setActive(false)
+                      onClick={() => {
+                        window.location.hash = item.to;
+                        setActive(false);
                       }}
                     >
                       {item.label}
